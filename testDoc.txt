@@ -1,0 +1,1 @@
+this testDoc.txt is to test gin clone lecturer
