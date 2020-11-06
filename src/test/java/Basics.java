@@ -19,7 +19,7 @@ public class Basics {
 
 //[ADD]------------------------------------------------------------------------------------------
 
-        String response =
+        String response0 =
                 //request----------
                 given().log().all().queryParam("key", "qaclick123")
                         .header("Content-Type", "application/json")
@@ -27,15 +27,7 @@ public class Basics {
                         //resource, method body----------
                         .when().post("/maps/api/place/add/json")
 
-                        //1st assertion
-                        //.then().log().all().assertThat().statusCode(200).toString();
-                        // .asString();
-
-                        //2nd assertion
-                        // .then().log().all().assertThat().statusCode(200).extract().response().asString();
-
-                        //3rd assertion
-
+                      
                         //response---------
                         .then().assertThat().statusCode(200)//response status code validation
                         // log().all().
@@ -45,7 +37,7 @@ public class Basics {
                         //it extract the all response
                         //response variable has the entire body
 
-        System.out.println(response);
+        System.out.println(response0);
         /*
 
         requirement 2 : add a place,[ADD]
@@ -57,7 +49,7 @@ public class Basics {
         // JsonPath jsonPath= new JsonPath(response);
         // take string input -> convert it into json -> pass the json
 
-        JsonPath js2 = ReUsableMethods.stringToJson(response);//here we use common method
+        JsonPath js2 = ReUsableMethods.stringToJson(response0);//here we use common method
 
         String placeID = js2.getString("place_id");//create path
         // eg/ location.lat => parent.child
